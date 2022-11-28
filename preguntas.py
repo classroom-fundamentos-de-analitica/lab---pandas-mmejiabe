@@ -22,7 +22,8 @@ def pregunta_01():
     40
 
     """
-    return
+    R1 = len(tbl0)
+    return R1
 
 
 def pregunta_02():
@@ -33,7 +34,8 @@ def pregunta_02():
     4
 
     """
-    return
+    R2 = len(tbl0.columns)
+    return R2
 
 
 def pregunta_03():
@@ -50,7 +52,8 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+    R3 = tbl0['_c1'].value_counts().sort_index()
+    return R3
 
 
 def pregunta_04():
@@ -65,7 +68,9 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    return
+    respuesta = tbl0[['_c1', '_c2']].groupby(['_c1']).mean()
+    R4= respuesta.squeeze()
+    return R4
 
 
 def pregunta_05():
