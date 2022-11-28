@@ -230,7 +230,7 @@ def pregunta_12():
     """
     tabla = tbl2.copy()
     tabla['_c5'] = x1['_c5a'] + ':' + tabla['_c5b'].astype(str)
-    R12 = x1.groupby('_c0').agg({'_c5': lambda var: sorted(var)})
+    R12 = tabla.groupby('_c0').agg({'_c5': lambda var: sorted(var)})
     for ind, fil in R12.iterrows():
         fil['_c5'] = ",".join([str(num) for num in fil['_c5']])
     R12.insert(0, '_c0', range(0, 40))
