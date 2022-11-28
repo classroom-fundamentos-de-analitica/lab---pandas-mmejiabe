@@ -229,7 +229,7 @@ def pregunta_12():
     39   39                    ggg:3,hhh:8,jjj:5
     """
     tabla = tbl2.copy()
-    tabla['_c5'] = x1['_c5a'] + ':' + tabla['_c5b'].astype(str)
+    tabla['_c5'] = tabla['_c5a'] + ':' + tabla['_c5b'].astype(str)
     R12 = tabla.groupby('_c0').agg({'_c5': lambda var: sorted(var)})
     for ind, fil in R12.iterrows():
         fil['_c5'] = ",".join([str(num) for num in fil['_c5']])
