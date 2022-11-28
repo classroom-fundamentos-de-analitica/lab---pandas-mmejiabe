@@ -68,8 +68,8 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    respuesta = tbl0[['_c1', '_c2']].groupby(['_c1']).mean()
-    R4= respuesta.squeeze()
+    promedio = tbl0[['_c1', '_c2']].groupby(['_c1']).mean()
+    R4= promedio.squeeze()
     return R4
 
 
@@ -87,7 +87,9 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    maximo = tbl0[['_c1', '_c2']].groupby(['_c1']).max()
+    R5 = maximo.squeeze()
+    return R5
 
 
 def pregunta_06():
@@ -99,7 +101,9 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    letras = tbl1['_c4'].unique()
+    R6 = sorted(map(lambda x: x.upper(), letras))
+    return R6
 
 
 def pregunta_07():
@@ -115,7 +119,9 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return
+    suma = tbl0[['_c1', '_c2']].groupby(['_c1']).sum()
+    R7 = suma.squeeze()
+    return R7
 
 
 def pregunta_08():
